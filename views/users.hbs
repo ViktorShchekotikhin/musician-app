@@ -1,0 +1,37 @@
+<h1>Users</h1>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Login</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+        {{#if users.length}}
+            {{#each users}}
+                <tr>
+                    <th scope="row">{{this.id}}</th>
+                    <td>{{this.login}}</td>
+                    <td>{{this.firstName}}</td>
+                    <td>{{this.lastName}}</td>
+                    <td class="table-actions">
+                        <form action="/users/{{this.id}}" method="get">
+                            <button class="btn btn btn-outline-info" type="submit">Info</button>
+                        </form>
+                        <form action="/users/{{this.id}}/delete" method="post">
+                            <button class="btn btn-outline-danger" type="submit">Delete</button>
+                        </form>
+                        <form action="/users/{{this.id}}/edit" method="get">
+                            <button class="btn btn-outline-secondary">Edit</button>
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+        {{else}}
+            <p>No Users</p>
+        {{/if}}
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+td.table-actions {
+    display: flex;
+}
+
+.table-actions form {
+    margin: 0 5px;
+}
+
+td, th {
+    vertical-align: middle!important;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+.user-info{
+    justify-content: center;
+    padding-top: 1rem;
+}
+.genres {
+    display: flex;
+}
+.user-edit input {
+    width: 100%;
+}
+
+form.user-edit {
+    padding: 1rem 0;
+}
+.delete-genre {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.important-info {
+    color: red;
+    text-align: center;
+}

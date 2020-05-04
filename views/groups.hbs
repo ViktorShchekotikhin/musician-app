@@ -1,0 +1,33 @@
+<h1>Groups</h1>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Group Name</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#if groups.length}}
+        {{#each groups}}
+            <tr>
+                <th scope="row">{{this.id}}</th>
+                <td>{{this.name}}</td>
+                <td class="table-actions">
+                    <form action="/groups/{{this.id}}/users" method="get">
+                        <button class="btn btn btn-outline-info" type="submit">Show users</button>
+                    </form>
+                    <form action="/groups/{{this.id}}/delete" method="post">
+                        <button class="btn btn-outline-danger" type="submit">Delete</button>
+                    </form>
+                    <form action="/groups/{{this.id}}/edit" method="get">
+                        <button class="btn btn-outline-secondary">Edit</button>
+                    </form>
+                </td>
+            </tr>
+        {{/each}}
+    {{else}}
+        <p>No Groups</p>
+    {{/if}}
+    </tbody>
+</table>

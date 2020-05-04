@@ -1,0 +1,20 @@
+<h1>Info about {{user.login}}</h1>
+<ul class="user-info list-group list-group-horizontal-xl">
+    <li class="list-group-item"><b>Login:</b> {{user.login}}</li>
+    <li class="list-group-item"><b>First Name:</b> {{user.firstName}}</li>
+    <li class="list-group-item"><b>Last Name:</b> {{user.lastName}}</li>
+</ul>
+<hr>
+<div class="genres">
+    <p>Working in genres:</p>
+    &nbsp;
+    {{#if user.genres.length}}
+        {{#each user.genres}}
+            <p>{{this.name}}</p>
+            &nbsp;
+        {{/each}}
+    {{else}}
+        <p>No genres yet</p>
+    {{/if}}
+</div>
+
