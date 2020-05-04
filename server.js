@@ -5,8 +5,6 @@ const bodyParser = require("body-parser");
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
-const helmet = require('helmet');
-const compression = require('compression');
 const exphbs = require('express-handlebars');
 const Handlebars = require('handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
@@ -46,9 +44,6 @@ const swaggerOptions = {
 };
 
 const swaggerrDocs = swaggerJsDoc(swaggerOptions);
-
-app.use(helmet());
-app.use(compression());
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerrDocs));
 // app.use(function (req, res, next) {
